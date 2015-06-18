@@ -1,0 +1,35 @@
+<h1>Welcome to the Band Tracker!</h1>
+<h2>A place where you can check your fav band and fab venues.</h2>
+
+<p><a href="/venues">Add a new venue</a></p>
+<p><a href="/bands">Add a new band</a></p>
+
+
+<h3>Here are all the bands in this database:</h3>
+
+<% if @bands.any?() %>
+<p>Click on an band to see information about them and what venues they play:</p>
+
+<ul>
+  <% @bands.each do |band| %>
+  <li><a href="/bands/<%= band.id() %>"><%= band.name() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no bands added yet!</p>
+<% end %>
+
+
+<h3>Here are all the venues in this database:</h3>
+
+<% if @venues.any?() %>
+<p>Click on a venue to see information about it and mark which bands were in it:</p>
+
+<ul>
+  <% @venues.each do |venue| %>
+  <li><a href="/venues/<%= venue.id() %>"><%= venue.location() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no venues added yet!</p>
+<% end %>
