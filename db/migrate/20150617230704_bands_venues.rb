@@ -1,6 +1,6 @@
 class BandsVenues < ActiveRecord::Migration
   def change
-  
+
 
 
     create_table(:bands_venues) do |t|
