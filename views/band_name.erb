@@ -1,10 +1,11 @@
-
+<h1>Wise choice.</h1>
+<h3>Try to pick a name that doesn't stink...</h3>
 
 <form action="/bands/<%= @band.id() %>/edit" method="post">
   <input name="_method" type="hidden" value="patch">
 
-  <label for="name">Rename Band:</label>
+  <label for="name">Rename <%= @band.name %>:</label>
   <input id="name" name="name" type="text">
 
-  <button type="submit">Update</button>
+  <button type="submit" class="btn btn-info">Update</button>
 </form>
